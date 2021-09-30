@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/botui/0.3.9/botui.min.js"></script>
     
     <div id="bot_app" style="padding-left: 40%; padding-right: 40%;">
@@ -16,6 +17,14 @@
     </div>
 
     <script>
+        axios.get('https://data.bodik.jp/api/3/action/datastore_search?resource_id=4df23780-cbbe-4a4b-9933-55476d917cbc&limit=5')
+      .then(res => {
+        this.infoAll = res.data;
+        console.log(this.infoAll)
+      });
+
+
+
         var BOTUI = BOTUI ||  {};
         BOTUI.botui = new BotUI("bot_app");
         BOTUI.init = function(){
@@ -24,7 +33,7 @@
                 content: "Hello !!"
             })
             .then(function(){
-                BOTUI.user();
+                //BOTUI.user();
             });
         }
         BOTUI.init();
