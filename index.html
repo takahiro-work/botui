@@ -20,11 +20,8 @@
     <script>
         axios.get(
             'https://data.bodik.jp/api/3/action/datastore_search?resource_id=4df23780-cbbe-4a4b-9933-55476d917cbc',
-             {  adapter: axiosJsonpAdapter,
-                params: {
-                    limit: '10'
-                }
-            }).then(
+             {  adapter: axiosJsonpAdapter,}
+             ).then(
                 res => {
                     this.infoAll = res.data;
                     console.log(this.infoAll)
