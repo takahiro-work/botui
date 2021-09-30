@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>エコーボット</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/botui/0.3.9/botui.min.js"></script>
+    <script>
+        var BOTUI = BOTUI ||  {};
+        BOTUI.botui = new BotUI("bot_app");
+        BOTUI.init = function(){
+            BOTUI.botui.message.bot({
+                delay: 300,
+                content: "Hello !!"
+            })
+            .then(function(){
+                BOTUI.user();
+            });
+        }
+        BOTUI.init();
+    </script>
+    <div id="bot_app" style="padding-left: 40%; padding-right: 40%;">
+        <bot-ui></bot-ui>
+    </div>
+</body>
+</html>
